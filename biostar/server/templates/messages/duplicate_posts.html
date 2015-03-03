@@ -1,7 +1,7 @@
 
-<p>Hello {{ user.name }}!</p>
+<p>Hola {{ user.name }}!</p>
 
-<p>Questions similar to yours can already be found at:</p>
+<p>Puedes encontrar preguntas similares a la tuya:</p>
 
 <ul>
 {% for post in posts %}
@@ -10,14 +10,14 @@
 </ul>
 
 <p>
-    We have closed your question to allow us to keep similar content in the same thread.
+    Hemos cerrado la pregunta para mantener contenido similar en el mismo hilo.
 </p>
 
 <p>
-    If you disagree with this please tell us why in a reply below. We'll be happy to talk about it.
+    Si no estás de acuerdo, por favor, cuéntanoslo más abajo. Estaremos encantados de hablar sobre ello.
 </p>
 
-<p>Cheers!</p>
+<p>Saludos.</p>
 
 {%  if comment %}
     PS: {{ comment }}

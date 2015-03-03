@@ -1,9 +1,9 @@
-{{user.name}} posted the {{post.get_type_display}}: "{{ post.root.get_title|safe }}":
+{{user.name}} escribió {{post.get_type_display}}: "{{ post.root.get_title|safe }}":
 
 {{post.as_text|safe|truncatewords:150}}
 
 ---
-See the full post at: http://{{site.domain}}{{ post.get_absolute_url }}
-{% if post.is_toplevel %}Replying to this email will post an answer to the question above.
-{% else %}Replying to this email will post a comment to the answer above.
+Mira la entrada completa en: http://{{site.domain}}{{ post.get_absolute_url }}
+{% if post.is_toplevel %}Puedes responder a la entrada anterior respondiendo a este correo.
+{% else %}Puedes comentar la respuesta anterior respondiendo a este correo.
 {% endif %}

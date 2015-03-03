@@ -2,26 +2,25 @@
 {% load socialaccount %}
 
 {% block page_title %}
-    Social Accounts
+    Cuentas sociales
 {% endblock %}
 
 {% block content %}
     <div class="row">
         <div class="col-md-8 col-md-offset-1">
 
-            <h3>Connect account </h3>
+            <h3>Conectar cuentas </h3>
 
             <div>
-                You can connect a social account to this site account.
-                This will allow you to log in more quickly from all of your devices.
+                Puedes conectar una cuenta social a la cuenta de este sitio.
+                Esto te permitirá conectarte más rápidamente desde todos tus dispositivos.
             </div>
 
             <div>
-                Our access is for authentication only. We can't access your timeline, see your friends or post on your
-                behalf.
+                Nuestro acceso es para autentificación, únicamente. No podemos acceder a tu actividad, ni ver a tus amigos ni publicar por ti.
             </div>
 
-            <div> Click a link to connect that provider to your account</div>
+            <div> Pulsa un enlace para conectar a tu proveedor con tu cuenta</div>
             <div class="socialaccount_ballot">
                 <ul class="socialaccount_providers">
                     {% include "socialaccount/snippets/provider_list.html" with process="connect" %}
@@ -29,8 +28,8 @@
                 {% include "socialaccount/snippets/login_extra.html" %}
             </div>
 
-            <h3>Disconnect accounts </h3>
-            <p>To disconnect an account select the account from below then click the remove button </p>
+            <h3>Deconectar cuentas </h3>
+            <p>Para desconectar una cuenta selecciona la cuenta de más abajo y pulsa sobre el botón eliminar </p>
             <form method="post" action="{% url 'socialaccount_connections' %}">
                 {% csrf_token %}
 

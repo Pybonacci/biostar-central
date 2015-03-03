@@ -3,20 +3,20 @@
 {% load crispy_forms_tags %}
 
 {% block page_title %}
-    Sign Up.
+    Registro.
 {% endblock %}
 {% block content %}
     <div class="row">
         <div class="col-md-8 col-md-offset-0">
 
-            <h3>{% blocktrans with provider_name=account.get_provider.name site_name=site.name %}Signing up with
+            <h3>{% blocktrans with provider_name=account.get_provider.name site_name=site.name %}Regístrate mediante
                 {{ provider_name }}{% endblocktrans %}</h3>
 
             {% if account.get_provider.name == "Twitter" or not user.email %}
-                <p>{% blocktrans with provider_name=account.get_provider.name site_name=site.name %}You are about to use
-                    your {{ provider_name }} account
-                    to login to
-                    {{ site_name }}. As a final step, please complete the following form:{% endblocktrans %}</p>
+                <p>{% blocktrans with provider_name=account.get_provider.name site_name=site.name %}Vas a usar
+                    tu cuenta {{ provider_name }}
+                    para acceder a
+                    {{ site_name }}. Como paso final, por favor, completa el siguiente formulario:{% endblocktrans %}</p>
 
                 <form class="signup" id="signup_form" method="post" action="{% url 'socialaccount_signup' %}">
                     {% csrf_token %}
@@ -34,25 +34,25 @@
                 <div class="alert alert-warning">
                     <p>
 
-                        <i class="fa fa-exclamation-circle fa-1x"></i> It seems that there is already an account with the email sent by {{ account.get_provider.name }}.
+                        <i class="fa fa-exclamation-circle fa-1x"></i> Parece que ya existe una cuenta con el correo enviado por {{ account.get_provider.name }}.
                     </p>
                     <p>
-                        We can't fully trust this information as some providers do not verify the emails that
-                        they send.
+                        No podemos confiar plenamente en esta información debido a que algunos proveedores no verifican los correos
+                        que envían.
                     </p>
                     <p>
-                        Your mission, should you choose to accept it:
+                        Tu misión, debes aceptar:
                     </p>
                     <p>
                         <ol>
-                            <li>Reset your password below.</li>
-                            <li>Log into the site with the new password.</li>
-                            <li>Connect your social account from your user account page.</li>
+                            <li>Restablecer la contraseña de más abajo.</li>
+                            <li>Acceder al sitio con la nueva contraseña.</li>
+                            <li>Connectar tu cuenta social desde la página de tu cuenta de usuario.</li>
                         </ol>
                     </p>
 
                     <p>
-                        Once the accounts have been connected the login will work on all devices.
+                        Una vez que las cuentas han sido conectadas el acceso funcionará en todos los dispositivos.
                     </p>
 
                     <form method="POST" action="{% url 'account_reset_password' %}">

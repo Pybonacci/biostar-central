@@ -1,2 +1,2 @@
 
-You have successfully signed in as <b>{{user.email}}</b>.
+YTe has registrado correctamente como <b>{{user.email}}</b>.

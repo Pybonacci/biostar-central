@@ -17,35 +17,35 @@
                 <div class="panel-body">
 
                     <p>
-                        Standard feeds:
+                        Feeds estándar:
                     </p>
 
 
                     <ul>
-                        <li><a href="{% url "latest-feed" %}">Latest Posts</a> - latest posts (all posts)</li>
-                        <li><a href="{% url "post-type" "question" %}">New Questions</a> - latest questions</li>
-                        <li><a href="{% url "post-type" "job" %}">New Job postings</a> - latest jobs</li>
-                        <li><a href="{% url "planet-feed" %}">Planet Feed</a> - latest blog entries</li>
+                        <li><a href="{% url "latest-feed" %}">Últimas entradas</a> - últimas entradas (todas las entradas)</li>
+                        <li><a href="{% url "post-type" "question" %}">Nuevas preguntas</a> - últimas preguntas</li>
+                        <li><a href="{% url "post-type" "job" %}">Nuevas ofertas de trabajo</a> - últimas ofertas</li>
+                        <li><a href="{% url "planet-feed" %}">Planet Feed</a> - Últimas entradas de blog</li>
                     </ul>
 
 
                     <p>
-                        Advanced usage, multiple sources can be added to a feed.
+                        Uso avanzado, se pueden añadir múltiples fuentes a un feed.
 
                     <p>
 
                     <ul>
-                        <li><a href="{% url "post-type" "blog+job" %}">Follow posts of different types</a>, posts of certain types:
+                        <li><a href="{% url "post-type" "blog+job" %}">Seguir entradas de diferentes tipos</a>, entradas de determinado tipo:
                             <code>/feeds/type/job+blog</code>
                         </li>
-                        <li><a href="{% url "post-feed" "2+4+6" %}">Follow multiple posts</a>, answers and comments attached to the
-                            specified posts: <code>/feeds/post/2+8+10</code>
+                        <li><a href="{% url "post-feed" "2+4+6" %}">Seguir múltiples entradas</a>, respuestas y comentarios anexadas
+                        a las entradas específicas: <code>/feeds/post/2+8+10</code>
                         </li>
-                        <li><a href="{% url "tag-feed" 'galaxy+bwa+tutorial' %}">Follow multiple tags</a>, posts that are tagged with one or more
-                            tags:
+                        <li><a href="{% url "tag-feed" 'galaxy+bwa+tutorial' %}">Seguir múltiples etiquetas</a>, entradas etiquetadas con una o más
+                        etiquetas:
                             <code>/feeds/tag/galaxy+bwa+tutorial</code>
                         </li>
-                        <li><a href="{% url "user-feed" "2+4+6" %}">Follow multiple users</a> a feed to posts by these users:
+                        <li><a href="{% url "user-feed" "2+4+6" %}">Seguir a múltiples usuarios</a> un feed para esos usuarios:
                             <code>/feeds/user/2+8+10</code>
                         </li>
                     </ul>

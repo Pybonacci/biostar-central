@@ -39,31 +39,30 @@
                     {#  Anonymous users. #}
                     {% if not user.is_authenticated %}
                         <div class="alert alert-info">
-                            Please <a href="{% url 'login' %}">log in</a> to add an answer.
+                            Por favor, <a href="{% url 'login' %}">identifícate</a> para añadir una respuesta.
                         </div>
                     {% endif %}
 
                     {#  Closed posts cannot get more answers #}
                     {% if not post.is_open %}
                         <div class="alert alert-warning">
-                            The thread is closed. No new answers may be added.
+                            El hilo ha sido cerrado. No se pueden añadir nuevas respuestas.
                         </div>
                     {% endif %}
 
                     {#  Authenticated users on an open post #}
                     {% if user.is_authenticated and post.is_open %}
 
-                        <h3>Add your answer</h3>
+                        <h3>Añade tu respuesta</h3>
 
                         <div class="alert alert-success">
 
-                            <p><strong>Note:</strong> Answers should respond to the original question on the
-                                top!
+                            <p><strong>Nota:</strong> ¡Las respuestas deben responder a la pregunta original especificada arriba!
                             </p>
 
                             <p>
-                                Use the comments
-                                to discuss an answer, ask for clarifications, request more details, etc.
+                                Usa los comentarios para discutir una respuesta,
+                                preguntar por clarificaciones, solicitar más detalles, etc.
                             </p>
                         </div>
 
@@ -74,7 +73,7 @@
                                 <textarea class="textarea form-control" cols="40" id="answerbox" name="content"
                                           rows="10"></textarea>
                             </div>
-                            <button type="submit" class="btn btn-success">Add Answer</button>
+                            <button type="submit" class="btn btn-success">Añadir respuesta</button>
 
                         </form>
                     {% endif %}
@@ -83,7 +82,7 @@
         </div>
         <div class="col-xs-12 col-md-3 sidebar">
             {% cache 600 "similar" post.id %}
-                <h4>Similar posts &bull; <a href="{% url 'search-page' %}">Search &raquo;</a></h4>
+                <h4>Entradas similares &bull; <a href="{% url 'search-page' %}">Buscar &raquo;</a></h4>
 
                 {% more_like_this post as related limit 25 %}
 

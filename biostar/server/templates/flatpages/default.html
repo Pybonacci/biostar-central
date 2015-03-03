@@ -18,31 +18,31 @@
 
                 <div class="well">
 
-                    <h4>Server Stats</h4>
+                    <h4>Estadísticas del servidor</h4>
 
-                    <p>Traffic: <b>{{ TRAFFIC|intcomma }}</b> users visited in the last hour.</p>
+                    <p>Tráfico: <b>{{ TRAFFIC|intcomma }}</b> visitas en la última hora.</p>
 
 
-                    <p>The site has <b>{{ user_count|intcomma }}</b> registered users that created
+                    <p>Este sitio tiene <b>{{ user_count|intcomma }}</b> usuarios registrados que crearon
                         <b>{{ post_count|intcomma }}</b> posts</li>
                     </p>
                     <p>
-                        These are distributed as <b>{{ question_count|intcomma }}</b>
-                        questions,<b> {{ answer_count|intcomma }}</b> answers
-                        and <b>{{ comment_count|intcomma }}</b> comments.
+                        Se distribuyen como <b>{{ question_count|intcomma }}</b>
+                        preguntas,<b> {{ answer_count|intcomma }}</b> respuestas
+                        y <b>{{ comment_count|intcomma }}</b> comentarios.
                     </p>
 
 
                 </div>
 
-                <h4>Site Admins</h4>
+                <h4>Administradores</h4>
                 <ul>
                     {% for user in admins %}
                         <li>{% gravatar user 30 %} {% userlink user %}</li>
                     {% endfor %}
                 </ul>
 
-                <h4>Site Moderators</h4>
+                <h4>Moderadores</h4>
                 <ul>
                     {% for user in mods %}
                         <li>{% gravatar user 30 %} {% userlink user %} </li>
@@ -55,7 +55,7 @@
 
 
     {% if user.is_admin %}
-        Administrator access:
+        Acceso administradores:
         <a role="button" class="btn btn-primary"
            href="{% url 'flatpage-update' flatpage.id %}">Edit {{ flatpage.title }}</a>
     {% endif %}

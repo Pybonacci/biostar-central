@@ -2,12 +2,12 @@
 {% load humanize %}
 <div class="post-action">
 
-    <span class="label label-default add-comment" data-value="{{ post.id }}" id="C{{ post.id }}">ADD {{ label }}</span>
+    <span class="label label-default add-comment" data-value="{{ post.id }}" id="C{{ post.id }}">Añade {{ label }}</span>
 
     &bull; <a href="{{ post.get_absolute_url }}">link</a>
     {% if post.is_editable %}
-        &bull; <a href="{% url 'post-edit' post.id %}" id="E{{ post.id }}">edit</a>
-        &bull; <a class="mod-post" data-value="{{ post.id }}" id="M{{ post.id }}">moderate</a>
+        &bull; <a href="{% url 'post-edit' post.id %}" id="E{{ post.id }}">editar</a>
+        &bull; <a class="mod-post" data-value="{{ post.id }}" id="M{{ post.id }}">moderar</a>
         {% if post.book_count %} &bull; {{ post.book_count }} bookmark{{ post.book_count|pluralize }}{% endif %}
     {% endif %}
 
@@ -18,30 +18,30 @@
         <div class="btn-group">
             <button type="button" class="btn btn-default btn-xs dropdown-toggle" id="F{{ post.id }}" data-toggle="dropdown">
                 {% if post.sub %}
-                    Follow via {{ post.sub.get_type_display }}
+                    Seguir vía {{ post.sub.get_type_display }}
                 {% else %}
-                    Not following
+                    no seguido
                 {% endif %}
                 <span class="caret"></span>
             </button>
             <ul class="dropdown-menu dropup" role="menu">
 
-                <li><a href="{% url 'change-sub' pk=post.id type='local' %}">Follow via messages</a></li>
-                <li><a href="{% url 'change-sub' pk=post.id type='email' %}">Follow via email</a></li>
-                <li><a href="{% url 'change-sub' pk=post.id type='nofollow' %}">Do not follow</a></li>
+                <li><a href="{% url 'change-sub' pk=post.id type='local' %}">Seguir vía messages</a></li>
+                <li><a href="{% url 'change-sub' pk=post.id type='email' %}">Seguir vía email</a></li>
+                <li><a href="{% url 'change-sub' pk=post.id type='nofollow' %}">No seguir</a></li>
             </ul>
         </div>
     {% endif %}
 
     <span class="userlink muted">
             {% if post.creation_date != post.lastedit_date %}
-            modified {{ post.lastedit_date|time_ago }}
+            modificado {{ post.lastedit_date|time_ago }}
             {%  if post.author != post.lastedit_user %}
-                by {% userlink post.lastedit_user %}
+                por {% userlink post.lastedit_user %}
             {%  endif %}
             &bull;
         {% endif %}
-        written <span itemprop="dateCreated" content="{{ post.creation_date|date:'c' }}">
-        {{ post.creation_date|time_ago }}</span> by {% userlink post.author %}
+        escrito <span itemprop="dateCreated" content="{{ post.creation_date|date:'c' }}">
+        {{ post.creation_date|time_ago }}</span> por {% userlink post.author %}
     </span>
 </div>
