@@ -13,7 +13,7 @@
 
             {% for message in objects %}
                 <div class="stripe unread {{ message.unread }}">
-                    {{ message.sent_at|timesince }} ago: {{ message.body.text|safe }}
+                    hace {{ message.sent_at|timesince }} : {{ message.body.text|safe }}
                 </div>
 
 
@@ -22,7 +22,7 @@
         </div>
 
         <div class="col-md-3 sidebar">
-            <div class="head">Messages by</div>
+            <div class="head">Mensajes por</div>
             {% sidebar_users people %}
         </div>
     </div>
